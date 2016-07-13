@@ -24,5 +24,5 @@ export default class SpeciesDetails extends DefaultDetailsPage{
 SpeciesDetails.getSpeciesId = ({species}) => {
 	console.log("species:",species)
 	const path = species.url.split("/");
-	return parseInt(path[path.indexOf("species")+1]);
+	return parseInt(path[path.indexOf(Constants.DATA_TYPES.SPECIES)+1]);
 }

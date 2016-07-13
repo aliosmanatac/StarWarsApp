@@ -12,7 +12,6 @@ export default class Species extends DefaultPage{
 		const { store } = this.context;
 		const { values } = store.getState().reducer;
 		const { page } = this.props.location.query;
-		const titles = ["name","classification","average_height", "average_lifespan", "designation", "language"];
 		const fieldNames = ["name","classification","average_height", "average_lifespan", "designation", "language"];
 		const getObjId = (obj) => {return SpeciesDetails.getSpeciesId({species:obj})};
 		return (
@@ -20,7 +19,6 @@ export default class Species extends DefaultPage{
 				pageType={Constants.DATA_TYPES.SPECIES} 
 				values={values} 
 				page={page}
-				titles={titles}
 				fieldNames={fieldNames}
 				getObjId = {getObjId}
 				history={this.props.history}

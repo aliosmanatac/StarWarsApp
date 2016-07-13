@@ -21,5 +21,5 @@ export default class PlanetDetails extends DefaultDetailsPage{
 
 PlanetDetails.getPlanetId = ({planet}) => {
 	const path = planet.url.split("/");
-	return parseInt(path[path.indexOf("planets")+1]);
+	return parseInt(path[path.indexOf(Constants.DATA_TYPES.PLANETS)+1]);
 }

@@ -21,5 +21,5 @@ export default class PersonDetails extends DefaultDetailsPage{
 
 PersonDetails.getPersonId = ({person}) => {
 	const path = person.url.split("/");
-	return parseInt(path[path.indexOf("people")+1]);
+	return parseInt(path[path.indexOf(Constants.DATA_TYPES.PEOPLE)+1]);
 }

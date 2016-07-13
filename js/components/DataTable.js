@@ -7,6 +7,9 @@ export default class DataTable extends React.Component{
 	onCellClick(row, column, obj){
 		this.props.history.push(obj.currentTarget.parentNode.getAttribute("data-href"))
 	}
+	fixHeader(header){
+		return header.replace(/_/g," ");
+	}
 	render(){
 		const { pageType, values, page, titles, fieldNames, getObjId } = this.props;
 		var htmlElems;
@@ -33,8 +36,8 @@ export default class DataTable extends React.Component{
 					<TableHeader displaySelectAll={false} adjustForCheckbox={false}>
 						<TableRow >
 							{
-								titles.map(title =>
-									<TableHeaderColumn> {title} </TableHeaderColumn>
+								fieldNames.map((fieldName,i) =>
+									<TableHeaderColumn key={i} style={{textTransform:"capitalize"}}> {this.fixHeader(fieldName)} </TableHeaderColumn>
 								)
 							}
 						</TableRow>

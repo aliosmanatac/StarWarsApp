@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import FilmDetails from "./FilmDetails";
 import DataTable from "../components/DataTable";
 import DefaultPage from "./DefaultPage";
@@ -13,7 +12,6 @@ export default class Films extends DefaultPage{
 		const { store } = this.context;
 		const { values } = store.getState().reducer;
 		const { page } = this.props.location.query;
-		const titles  =    ["Title", "Episode ID", "Release Date", "Producer", "Director"];
 		const fieldNames = ["title", "episode_id", "release_date", "producer", "director"];
 		const getObjId = (obj) => {return FilmDetails.getFilmId({film:obj})};
 		return (
@@ -21,7 +19,6 @@ export default class Films extends DefaultPage{
 				pageType={Constants.DATA_TYPES.FILMS} 
 				values={values} 
 				page={page}
-				titles={titles}
 				fieldNames={fieldNames}
 				getObjId = {getObjId}
 				history={this.props.history}

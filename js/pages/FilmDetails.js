@@ -21,5 +21,5 @@ export default class FilmDetails extends DefaultDetailsPage{
 
 FilmDetails.getFilmId = ({film}) => {
 	const path = film.url.split("/");
-	return parseInt(path[path.indexOf("films")+1]);
+	return parseInt(path[path.indexOf(Constants.DATA_TYPES.FILMS)+1]);
 }

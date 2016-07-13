@@ -25,5 +25,5 @@ export default class StarshipDetails extends DefaultDetailsPage{
 
 StarshipDetails.getStarshipId = ({starship}) => {
 	const path = starship.url.split("/");
-	return parseInt(path[path.indexOf("starships")+1]);
+	return parseInt(path[path.indexOf(Constants.DATA_TYPES.SPECIES)+1]);
 }

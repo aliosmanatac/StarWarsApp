@@ -22,7 +22,7 @@ export default class Layout extends React.Component{
 	render(){
     	const actions = [
 			<FlatButton
-			    label="OK5"
+			    label="OK"
 			    primary={true}
 			    onClick={this.closeErrorDialog}
 			  />
